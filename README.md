@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-Offline Dockerfile & docker-compose security linter (CIS / CWE)
+ODockerFile — Dockerfile & Compose Security Linter. It provides full Dockerfile parser — line continuations, escape directive, exec/shell form, flags, heredocs, stages, ARG/ENV substitution, inline suppressions. Built-in demo/self-test paths and severity gates help validate detections without touching production when those flags are used.
 
 ---
 
@@ -30,11 +30,6 @@ Offline Dockerfile & docker-compose security linter (CIS / CWE)
 - 30+ Compose rules — privileged, cap_add, host network / pid / ipc / uts / userns, docker.sock & host-root binds, seccomp/apparmor unconfined, limits, read-only rootfs
 - Every rule mapped to CIS Docker Benchmark + CWE with severity, rationale and concrete remediation
 - Directory tree discovery (Dockerfile*, Containerfile, *.dockerfile, docker-compose*.yml, compose*.yaml)
-- Score / grade, severity filter, CI gate (--fail-on)
-- Export TXT / Markdown / JSON / CSV / SARIF 2.1.0
-- Hardened Dockerfile & compose template generator
-- Built-in self-test (--demo) with weak + hardened sets
-- Strictly read-only — never builds, pulls or runs images
 
 ---
 
@@ -48,7 +43,10 @@ Offline Dockerfile & docker-compose security linter (CIS / CWE)
 ## 🚀 Usage
 
 ```bash
-./ODockerFile
+./ODockerFile                                     # interactive menu
+./ODockerFile --scan -r /path/to/root
+./ODockerFile --demo
+./ODockerFile --help
 ```
 
 ---
